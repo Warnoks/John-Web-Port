@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Final Act</title>
+    <link rel="stylesheet" href="design.css">
+</head>
+<body>
+
+    <header class="hero">
+        <div class="container">
+            <img id="profileImg" src="profile.jpg" alt="" class="profile-img" data-src-light="cf2a3168-857c-4f28-b78b-57745081042e.jpg" data-src-dark="73339380-aa96-4434-9be0-a7acac8a7632.jpg">
+            <h1 data-phrase-light="Panget ka pag nabasa mo to-john" data-phrase-dark="Shrek&#39;s Portfolio">John Arnold Salvador Portfolio</h1>
+            <p data-phrase-light="Learn From Your Mistakes" data-phrase-dark="I&#39;m The Mistake">Learn From Your Mistakes</p>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#awards">Awards</a></li>
+                <li><a href="#hobbies">Hobbies</a></li>
+                <li><a href="#work">Work</a></li>
+                    <li>
+                        
+                        <button id="themeToggle" class="theme-toggle floating" aria-pressed="false" title="Toggle dark mode" aria-label="Toggle dark mode">
+                            
+                            <svg class="icon sun" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <circle cx="12" cy="12" r="4"></circle>
+                                <path d="M12 2v2"></path>
+                                <path d="M12 20v2"></path>
+                                <path d="M4.93 4.93l1.41 1.41"></path>
+                                <path d="M17.66 17.66l1.41 1.41"></path>
+                                <path d="M2 12h2"></path>
+                                <path d="M20 12h2"></path>
+                                <path d="M4.93 19.07l1.41-1.41"></path>
+                                <path d="M17.66 6.34l1.41-1.41"></path>
+                            </svg>
+                            
+                            <svg class="icon moon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                            </svg>
+                        </button>
+                    </li>
+                
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+
+        <section id="about">
+            <h2>About Me</h2>
+            <p data-phrase-light="I'm John Arnold Salvador. A student in College of Sciences Technology, and Communication at Sariaya Quezon. I'm at Second Year now." data-phrase-dark="I'm Shrek. Keep Eating and Keep  Sleeping."></p>
+        </section>
+
+        <hr>
+
+        <section id="education">
+            <h2>Educational Background</h2>
+            
+            <article class="entry">
+                <h3>Highschool</h3>
+                <p><strong>Atimonan National Comprehensive Highschool</strong> | Atimonan,Quezon</p>
+                <p><em>2018 - 2022</em></p>
+                <h3>Senior Highschool</h3>
+                <p><strong>College of Sciences Technology and Communication</strong> | Atimonan,Quezon </p>
+                <p><em>2022 - 2023</em></p>
+                <h3>College</h3>
+                <p><strong>College of Sciences Technology and Communication </strong>| Sariaya,Quezon</p>
+                <p><em>2024 - Present</em></p>
+            </article>
+        </section>
+
+        <hr>
+
+        <section id="awards">
+            <h2>Excellence & Academic Awards</h2>
+            <ul>
+                <li><strong>With honor</strong> - 2016 </li>
+                <li><strong>Conduct Awardee</strong> - 2016</li>
+                <li><strong>With Honor</strong> - 2022</li>
+                <li><strong>Best In Electrical Installation</strong> - 2023</li>
+                <li><strong>Best In Research</strong> - 2023</li>
+            </ul>
+        </section>
+
+        <hr>
+
+        <section id="hobbies">
+            <h2>Hobbies & Interests</h2>
+            <p>
+                My Hobbies are playing basketball, playing online games, and sometimes in go to gym. I always love to chat with others. I also love playing wih guitar. Thats All I do</p>
+        </section>
+
+        <hr>
+
+        <section id="work">
+            <h2>Work Experience</h2>
+            
+            <article class="entry">
+                <h3>Student Assistant</h3>
+                <p><strong>CSTC</strong> | Sariaya</p>
+                <p><em>2024 - 2025</em></p>
+            </article>
+
+            </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <p data-phrase-light="&copy; 2025 Web Profile John. All rights reserved." data-phrase-dark="&copy; 2025 Web Profile John — Night edition."></p>
+            <p data-phrase-light="Email:johnarnoldsalvador24@gmail.com" data-phrase-dark="Email:johnarnoldsalvador24@gmail.com"></p>
+        </div>
+    </footer>
+
+    <script>
+        (function(){
+        const btn = document.getElementById('themeToggle');
+        const storageKey = 'site-theme';
+        const profileImg = document.getElementById('profileImg');
+
+        
+        const saved = localStorage.getItem(storageKey);
+        if(saved === 'dark') document.body.classList.add('dark');
+
+        function setAria(){
+            if(!btn) return;
+            btn.setAttribute('aria-pressed', document.body.classList.contains('dark'));
+        }
+
+        function updateProfileImg(){
+            if(!profileImg) return;
+            const isDark = document.body.classList.contains('dark');
+            const darkSrc = profileImg.dataset.srcDark;
+            const lightSrc = profileImg.dataset.srcLight;
+            
+            if(isDark && darkSrc){
+                profileImg.classList.remove('img-filter-dark');
+                profileImg.src = darkSrc;
+               
+                profileImg.onerror = function(){ profileImg.src = lightSrc || profileImg.src; profileImg.classList.add('img-filter-dark'); };
+            } else {
+                
+                if(lightSrc) profileImg.src = lightSrc;
+                profileImg.classList.remove('img-filter-dark');
+                profileImg.onerror = null;
+            }
+        }
+
+        setAria();
+        
+        updateProfileImg();
+        
+        function updatePhrases(){
+            document.querySelectorAll('[data-phrase-light]').forEach(el => {
+                const isDark = document.body.classList.contains('dark');
+                const light = el.dataset.phraseLight;
+                const dark = el.dataset.phraseDark;
+                if(isDark){
+                    if(dark != null) el.innerHTML = dark;
+                } else {
+                    if(light != null) el.innerHTML = light;
+                }
+            });
+        }
+
+     
+        updatePhrases();
+
+        btn && btn.addEventListener('click', function(){
+            document.body.classList.toggle('dark');
+            const isDark = document.body.classList.contains('dark');
+            localStorage.setItem(storageKey, isDark ? 'dark' : 'light');
+            setAria();
+            updateProfileImg();
+            updatePhrases();
+        });
+        })();
+    </script>
+
+</body>
+</html>

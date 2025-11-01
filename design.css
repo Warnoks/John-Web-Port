@@ -1,0 +1,312 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f7f6; 
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 960px;
+    margin: 0 auto; 
+    padding: 0 15px;
+}
+
+h1, h2, h3 {
+    color: #2c3e50;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-size: 2rem;
+    border-bottom: 3px solid #1abc9c; 
+    padding-bottom: 10px;
+    margin-top: 30px;
+}
+
+h3 {
+    font-size: 1.5rem;
+    color: #1abc9c;
+    margin-bottom: 5px;
+}
+
+p {
+    margin-bottom: 15px;
+}
+
+ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+a {
+    color: #1abc9c;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background-color: #ddd;
+    margin: 30px 0;
+}
+
+.hero {
+    background-color: #2c3e50; 
+    color: #ffffff;
+    padding: 40px 0;
+    text-align: center;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    font-style: italic;
+    color: var(--p-color);
+}
+
+.profile-img {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    border: 6px solid var(--profile-border, #fff);
+    box-shadow: 0 12px 36px var(--profile-shadow, rgba(0,0,0,0.12));
+    object-fit: cover;
+    transition: box-shadow .2s ease, transform .18s ease, filter .18s ease, border-color .18s ease;
+    filter: saturate(1.06) contrast(1.04) brightness(1.03);
+}
+.profile-img:hover{
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 22px 48px var(--profile-shadow, rgba(0,0,0,0.12));
+}
+
+
+nav {
+    background-color: #34495e; 
+    padding: 10px 0;
+    position: sticky; 
+    top: 0;
+    z-index: 100;
+}
+nav .container {
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 1.1rem;
+    padding: 5px;
+}
+
+nav ul li a:hover {
+    color: #1abc9c;
+    text-decoration: none;
+}
+
+
+main {
+    padding: 20px 0;
+}
+
+section {
+    background-color: #ffffff;
+    padding: 30px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+
+.entry {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px dashed #ccc;
+}
+
+.entry:last-child {
+    border-bottom: none;
+}
+
+.entry p {
+    margin: 5px 0;
+}
+
+.entry strong {
+    color: #34495e;
+}
+
+.entry em {
+    color: #7f8c8d; 
+}
+
+footer {
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    text-align: center;
+    padding: 30px 0;
+    margin-top: 20px;
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    .container {
+        width: 95%;
+    }
+
+    section {
+        padding: 20px;
+    }
+}
+
+
+
+section {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+section:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); 
+}
+
+
+.hero {
+
+    animation: fadeInPage 1s ease-out;
+}
+
+
+main {
+    animation: fadeInContent 1s ease-out 0.2s;
+    animation-fill-mode: forwards;
+    opacity: 0; 
+}
+
+
+@keyframes fadeInPage {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInContent {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+:root{
+    --bg: #f4f7f6;
+    --text: #ffffff;
+    --para: #ffffff;
+    --p-color: #000000;
+    --about-text: #000000;
+    --awards-text: #000000;
+    --accent: #1abc9c;
+    --profile-border: var(--accent);
+    --profile-shadow: rgba(26, 140, 140, 0.28);
+    --header-bg: #2c3e50;
+    --nav-bg: #34495e;
+    --section-bg: #ffffff;
+    --hero-text: #ffffff;
+}
+
+body.dark{
+    --bg: #0f1724;
+    --text: #e6eef6;
+    --para: #cfd8e3;
+    --p-color: #ffffff;
+    --about-text: #ffffff; 
+    --awards-text: #ffffff;
+    --accent: #1fb6ff;
+    --profile-border: #e6eef6;
+    --profile-shadow: rgba(30, 160, 255, 0.12);
+    --header-bg: #0b1220;
+    --nav-bg: #1b2a36;
+    --section-bg: #071021;
+    --hero-text: #e6eef6;
+}
+
+body{ background-color: var(--bg); color: var(--text); transition: background-color .25s ease, color .25s ease; }
+.hero{ background-color: var(--header-bg); color: var(--hero-text); }
+nav{ background-color: var(--nav-bg); }
+section{ background-color: var(--section-bg); }
+a{ color: var(--accent); }
+
+
+.container p{ color: var(--p-color); transition: color .18s ease; }
+
+
+p{ color: var(--p-color); transition: color .18s ease; }
+
+
+#about, #about h2, #about p {
+    color: var(--about-text);
+    transition: color .18s ease;
+}
+
+
+#awards, #awards h2, #awards p, #awards ul, #awards li, #awards strong{
+    color: var(--awards-text);
+    transition: color .18s ease;
+    text-transform: none;
+}
+
+.profile-img{ transition: filter .2s ease, opacity .2s ease; }
+.profile-img.img-filter-dark{ filter: brightness(.75) contrast(1.05) saturate(.9); }
+
+.theme-toggle{ background: var(--accent); color: #fff; border: none; padding: 8px 10px; border-radius:6px; cursor:pointer; margin-left:12px; }
+
+.theme-toggle.floating{ position: fixed; right: 16px; top: 16px; width:44px; height:44px; padding:0; display:flex; align-items:center; justify-content:center; border-radius:50%; box-shadow: 0 6px 18px rgba(0,0,0,0.2); z-index:9999; }
+.theme-toggle.floating .icon{ width:20px; height:20px; color: #fff; }
+.theme-toggle.floating .moon{ display:none; }
+body.dark .theme-toggle.floating .sun{ display:none; }
+body.dark .theme-toggle.floating .moon{ display:inline-block; }
+.theme-toggle.floating{ transition: transform .15s ease, background-color .15s ease; }
+.theme-toggle.floating:active{ transform: scale(.96); }
